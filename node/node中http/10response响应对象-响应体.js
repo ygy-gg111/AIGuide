@@ -9,6 +9,7 @@
 const http = require('http')
 const servie = http.createServer((req, res) => {
     let isLogin = false
+   
     if (req.url == '/login' && req.method == 'POST') {
         let body = {}
         req.setEncoding('utf-8')
@@ -24,7 +25,7 @@ const servie = http.createServer((req, res) => {
         })
         req.on('end', () => {
             if (isLogin) {
-                // 设置响应头返回格式
+                // 设置响应头返回格式nono
                 res.writeHead(200, {
                     'content-type': 'application/json;charset=utf8'
                 })

@@ -1,0 +1,52 @@
+<!--
+ * @Author: ygy 1572116017@qq.com
+ * @Date: 2025-03-09 19:55:32
+ * @LastEditors: ygy 1572116017@qq.com
+ * @LastEditTime: 2025-03-09 20:05:02
+ * @FilePath: \node\node中用户登录权证\验证多种权限.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="login"> 登录 </button>
+        <button id="logout"> 退出 </button>
+    </div>
+    <script>
+        const btn = document.querySelector('#login')
+        btn.addEventListener('click', () => {
+            // 获取用户信息
+            // cookie分为两种，第一内存cookie，第二硬盘cookie
+            // 内存cookie：浏览器关闭后，cookie会消失
+            // 硬盘cookie：浏览器关闭后，cookie不会消失，会存储在硬盘中
+            // 加了max-age，设置了cookie的时候就属于硬盘cookie
+            // 1n内存cookie，关闭浏览器，cookie就会消失
+            document.cookie = 'username=ygy;password=123456;'
+            // 2硬盘cookie 
+            document.cookie = 'username=ygy;password=123456;max-age=1000'
+            // 2.1硬盘cookie删除，等时间到了，或者把max-age设置为0
+            document.cookie = 'username=ygy;password=123456;max-age=0'
+            // 获取cookie
+            console.log(document.cookie)
+        })
+        const lgtBtn = document.querySelector('#logout')
+        lgtBtn.addEventListener('click', () => {
+
+            // 2.1硬盘cookie删除，等时间到了，或者把max-age设置为0
+            document.cookie = 'username=ygy;password=123456;max-age=0'
+        })
+
+    </script>
+</body>
+
+
+</html>

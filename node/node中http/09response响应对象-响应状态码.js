@@ -8,7 +8,7 @@
  */
 const http = require('http')
 
-const url = require('url')
+
 const servie = http.createServer((req, res) => {
     let isLogin = false
     if (req.url == '/login' && req.method == 'POST') {

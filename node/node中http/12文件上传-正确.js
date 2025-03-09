@@ -2,7 +2,7 @@
  * @Author: ygy 1572116017@qq.com
  * @Date: 2025-02-23 15:30:21
  * @LastEditors: ygy 1572116017@qq.com
- * @LastEditTime: 2025-02-25 23:34:01
+ * @LastEditTime: 2025-02-26 22:44:43
  * @FilePath: \AIGuide\node\node中http\01http的基本使用.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -21,7 +21,7 @@ const servie = http.createServer((req, res) => {
     let boundary = ''
     try {
         boundary = req.headers['content-type'].split('boundary=')[1]
-        console.log(boundary, req.headers['content-type'].split(';')[1])
+
         // req.headers['content-type'].split('boundary=')[1] req.headers['content-type'].split(';')[1].replace(' boundary=', '')
     } catch (error) {
         res.writeHead(400)

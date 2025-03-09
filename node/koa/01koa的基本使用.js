@@ -21,6 +21,7 @@ app.use((ctx, next) => {
     // console.log(ctx.res)
     // ctx.body不是获取请求体，而是作为响应体
     ctx.body = '111'
+    
 
 })
 app.listen(7177, () => {

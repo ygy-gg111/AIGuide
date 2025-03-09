@@ -1,0 +1,25 @@
+# 依赖目录
+node_modules/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量文件（包含敏感信息）
+.env
+
+# 构建输出目录
+dist/
+build/
+
+# IDE 或编辑器配置文件
+.vscode/
+.idea/
+
+# npm 缓存目录
+.npm
+
+# 测试覆盖率报告
+coverage/

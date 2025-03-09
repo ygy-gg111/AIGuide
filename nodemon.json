@@ -1,0 +1,7 @@
+{
+  "ignoreRoot": ["generated_files/", "logs/"],
+  "events": {
+    "restart": "echo 正在重启...", 
+    "crash": "echo 应用崩溃!"
+  }
+} 

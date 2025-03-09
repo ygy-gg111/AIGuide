@@ -3,7 +3,7 @@
 // 1
 const fs = require('fs')
 const path = require('path');
-const http = require('http')
+
 const EventEmitter = require('events');
 fs.readFile(path.join(__dirname, './基础知识node/01.js'), (err, data) => {
     if (err) return
@@ -66,11 +66,5 @@ rs.on('end', () => {
     ws.close()
     console.log('结束')
 })
-const servie = http.createServer((req, res) => {
-    res.end('你好呀，小老弟')
-})
 
-servie.listen(7177, () => {
-    console.lohh('服务器启动成功')
-})
 

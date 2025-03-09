@@ -14,6 +14,7 @@ const servie = http.createServer((req, res) => {
     // res是一个可读写的流
     res.write('<h1>你好</h1>')
     // 一定要调用end方法，否则会一直处于等待状态
+    // 一定要调用end方法，否则会一直处于等待状态
     res.end()
 
 })
