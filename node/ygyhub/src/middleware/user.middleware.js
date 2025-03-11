@@ -6,7 +6,7 @@
  * @FilePath: \ygyhub\src\middleware\user.middleware.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-const { findUserName } = require('../../service/user.service')
+const { findUserName } = require('../service/user.service')
 const { NAME_IS_ALREADY_EXISTS, NAME_OR_PASSWORD_IS_REQUIRED } = require('../config/error-constants')
 const { md5password } = require('../utils/md5-password')
 async function verIfyUer(ctx, next) {

@@ -11,6 +11,7 @@ userRouter.get('/login', (ctx, next) => {
     ctx.body = '登录成功'
 })
 userRouter.get('/list', (ctx, next) => {
+    // 这样就可直接获取登陆后生成的cookie 
     const username = ctx.cookies.get('username')
     console.log(username)
     ctx.body = '获取个人信息'

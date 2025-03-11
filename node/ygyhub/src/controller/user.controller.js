@@ -1,5 +1,5 @@
 
-const userService = require('../../service/user.service')
+const userService = require('../service/user.service')
 
 class UserController {
     async create(ctx, next) {
