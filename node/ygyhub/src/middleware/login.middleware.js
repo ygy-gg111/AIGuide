@@ -2,14 +2,14 @@
  * @Author: ygy 1572116017@qq.com
  * @Date: 2025-03-07 22:37:41
  * @LastEditors: ygy 1572116017@qq.com
- * @LastEditTime: 2025-03-10 23:31:15
+ * @LastEditTime: 2025-03-12 22:32:46
  * @FilePath: \ygyhub\src\middleware\user.middleware.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 const { findUserName } = require('../service/user.service')
 const { NAME_OR_PASSWORD_IS_REQUIRED, NAME_IS_NOT_EXISTS, PASSWORD_IS_INCORRECT, UNAUTHORIZATION } = require('../config/error-constants')
 const { md5password } = require('../utils/md5-password')
-const { PRIVATE_KEY, Public_KEY } = require('../config/screct')
+const { Public_KEY } = require('../config/screct')
 const jwt = require('jsonwebtoken')
 async function verifyLogin(ctx, next) {
     // 1获取用户账号和密码
@@ -42,21 +42,25 @@ async function verifyLogin(ctx, next) {
 
 const verIfyAuth = async (ctx, next) => {
     const authorization = ctx.headers.authorization
-    console.log(authorization)
     if (!authorization) {
         ctx.app.emit('error', UNAUTHORIZATION, ctx)
         return
     }
     const token = authorization.replace('Bearer ', '')
-    const result = jwt.verify(token, Public_KEY, {
-        algorithms: ['RS256']
-    })
-    if (!result) {
+    try {
+        const result = jwt.verify(token, Public_KEY, {
+            algorithms: ['RS256']
+        })
+        ctx.user = result
+        await next()
+    } catch (err) {
         ctx.app.emit('error', UNAUTHORIZATION, ctx)
         return
     }
-    ctx.user = result
-    await next()
+
+
+
+
 
 }
 module.exports = {
