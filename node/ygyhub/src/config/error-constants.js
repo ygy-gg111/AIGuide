@@ -1,0 +1,24 @@
+/*
+ * @Author: ygy 1572116017@qq.com
+ * @Date: 2025-03-08 11:37:58
+ * @LastEditors: ygy 1572116017@qq.com
+ * @LastEditTime: 2025-03-13 23:30:15
+ * @FilePath: \ygyhub\src\config\error-constants.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+const NAME_OR_PASSWORD_IS_REQUIRED = 'name or password is required'
+const NAME_IS_ALREADY_EXISTS = 'name is already exists'
+const NAME_IS_NOT_EXISTS = 'name is not exists'
+const PASSWORD_IS_INCORRECT = 'password is incorrect'
+const UNAUTHORIZATION = 'unauthorization'
+const CONTENT_IS_REQUIRED = 'content is required'
+const NO_OPERATION_PERMISSION = 'No operation permission'
+module.exports = {
+    NAME_OR_PASSWORD_IS_REQUIRED,
+    NAME_IS_ALREADY_EXISTS,
+    NAME_IS_NOT_EXISTS,
+    PASSWORD_IS_INCORRECT,
+    UNAUTHORIZATION,
+    CONTENT_IS_REQUIRED,
+    NO_OPERATION_PERMISSION
+}
